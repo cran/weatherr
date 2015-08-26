@@ -1,6 +1,7 @@
-eaaae8a803e025ee222cd78d752466d3 *DESCRIPTION
-3b4870f0f6e59c248e34cc8655bfbfc1 *INDEX
+8e51f304e59de7643629189d2509e471 *DESCRIPTION
 584eb9909df0fae17be59fec04e8c06f *NAMESPACE
-b9bede9f12d8de4ccb9560d1195754c4 *R/locationforecast.R
-4c516856a860e022f50229a44359d92a *man/locationforecast.Rd
-8ec76daa34f08f980eba8e4f4baa7469 *man/weatherr-package.Rd
+0c7365448d96c16380cac482c07e706c *R/ggele.R
+180254083c663baef7ee26351fef203d *R/locationforecast.R
+c4578404743d1f1f76f841af174fa295 *man/ggele.Rd
+ef8c153667e7c906de2502441e7da569 *man/locationforecast.Rd
+2310e4a3f02068957d51cc7b69b0e0b0 *man/weatherr-package.Rd

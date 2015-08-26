@@ -1,7 +1,6 @@
-locationforecast <-
-function(lat,lon,elevation=NULL,location=NULL,exact=TRUE,tz=Sys.timezone()) {
+locationforecast <- function(lat,lon,elevation=NULL,location=NULL,exact=TRUE,tz=Sys.timezone()) {
 if (!is.null(location)) {
-latlon = as.numeric(rev(geocode(location)))
+latlon = as.numeric(rev(geocode(location=location,source = "google")))
 if (any(is.null(latlon))) stop('Error: no match location')
 lat = latlon[1]; lon = latlon[2]
 elevation = fromJSON(paste0('http://maps.googleapis.com/maps/api/elevation/json?locations=',lat,',',lon,'&sensor=false'))$results[[1]]$elevation
@@ -44,6 +43,6 @@ precipitation = as.numeric(sapply(1:length(temp),function(x) {x1 = temp[[x]]$pre
 minTemperature = as.numeric(sapply(1:length(temp),function(x) {x1 = temp[[x]]$minTemperature['value']; ifelse(!is.null(x1),x1,NA)}))
 maxTemperature = as.numeric(sapply(1:length(temp),function(x) {x1 = temp[[x]]$maxTemperature['value']; ifelse(!is.null(x1),x1,NA)}))
 weather_id = sapply(1:length(temp),function(x) {x1 = temp[[x]]$symbol['id']; ifelse(!is.null(x1),x1,NA)})
-data.frame(timefrom=timefrom[v], timeto=timeto[v], interval = tdiff[v], precipitation=precipitation, minTemperature=minTemperature, maxTemperature=maxTemperature, weather_id=weather_id)
+data.frame(timefrom=timefrom[v], timeto=timeto[v], interval = tdiff[v], precipitation=precipitation, minTemperature=minTemperature, maxTemperature=maxTemperature, weather_id=weather_id, stringsAsFactors=F)
 }
 }

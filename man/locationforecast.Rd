@@ -55,9 +55,9 @@ If exact=FALSE, A data frame is returned with the following quantities:
 
 \examples{
 # Get exact time location forecast of Hong Kong
-locationforecast(lon=114.1095,lat=22.39643)
+locationforecast(lat=22.39643,lon=114.1095)
 # Get time interval location forecast of Malta
-locationforecast(lon=14.37542,lat=35.9375, exact=FALSE)
+locationforecast(lat=35.9375,lon=14.37542,exact=FALSE)
 # Get exact time location forecast of Cape Town, South Africa with timezone 'Africa/Johannesburg'
 locationforecast(location='Cape Town, South Africa', tz='Africa/Johannesburg')
 }
