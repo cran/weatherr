@@ -23,5 +23,7 @@
 
 \examples{
 # Get the elevation of a location in Hong Kong
+\dontrun{
 ggele(lat=22.39643,lon=114.1095)
+}
 }

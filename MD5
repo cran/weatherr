@@ -1,7 +1,7 @@
-8e51f304e59de7643629189d2509e471 *DESCRIPTION
+112f01b3470339dacf7cb8a5a01c7627 *DESCRIPTION
 584eb9909df0fae17be59fec04e8c06f *NAMESPACE
-0c7365448d96c16380cac482c07e706c *R/ggele.R
+c3893bafbe28b2ae139ac35dd7fcbace *R/ggele.R
 180254083c663baef7ee26351fef203d *R/locationforecast.R
-c4578404743d1f1f76f841af174fa295 *man/ggele.Rd
-ef8c153667e7c906de2502441e7da569 *man/locationforecast.Rd
-2310e4a3f02068957d51cc7b69b0e0b0 *man/weatherr-package.Rd
+f74ef697f24d75763e3d1c50f4d02978 *man/ggele.Rd
+175c4a5c866deefbc2fc4c2a801e1e4f *man/locationforecast.Rd
+cb096c491ce5a9e963f05a456cee9bd6 *man/weatherr-package.Rd

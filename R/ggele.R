@@ -1,7 +1,7 @@
 ggele = function(lat=0,lon=0, output=c('elevation','elevation/resolution','all')) {
 output <- match.arg(output)
 if ((length(lat) != length(lon)) | (any(abs(lat)>90)) | (any(abs(lon)>180))) stop('Longitude and latitude should have equal length and within the valid range')
-inpar = paste(paste0(lat,', ', lon),collapse = ' | ')
+inpar = paste(paste0(lat,',', lon),collapse = ' | ')
 url = paste0("http://maps.googleapis.com/maps/api/elevation/json?locations=", inpar)
 u = paste0(paste0(readLines(url), collapse = "\n"), "\n")
 tmp = try(RJSONIO::fromJSON(u))
