@@ -6,11 +6,13 @@
 \description{Obtaining elevation at a set of given locations. Note that using this function you are agreeing to the Google Maps API Terms of Service at https://developers.google.com/maps/terms.
 }
 
-\usage{ggele(lat=0,lon=0, output=c('elevation','elevation/resolution','all'))}
+\usage{ggele(lat=0,lon=0, output=c('elevation','elevation/resolution','all'),key=NULL)}
 \arguments{
   \item{lat, lon}{numeric objects. latitude and longitude of a location in decimal degrees}
 
   \item{output}{elevation; elevation and its corresponding resolution or the original JSON output (in a list format)}
+
+  \item{key}{Google API key}
 
 }
 \value{ 

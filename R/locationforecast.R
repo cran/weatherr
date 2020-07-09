@@ -1,15 +1,15 @@
-locationforecast <- function(lat,lon,elevation=NULL,location=NULL,exact=TRUE,tz=Sys.timezone()) {
+locationforecast <- function(lat,lon,elevation=NULL,location=NULL,exact=TRUE,tz=Sys.timezone(),key=NULL) {
 if (!is.null(location)) {
 latlon = as.numeric(rev(geocode(location=location,source = "google")))
 if (any(is.null(latlon))) stop('Error: no match location')
 lat = latlon[1]; lon = latlon[2]
-elevation = fromJSON(paste0('http://maps.googleapis.com/maps/api/elevation/json?locations=',lat,',',lon,'&sensor=false'))$results[[1]]$elevation
+elevation = fromJSON(paste0('http://maps.googleapis.com/maps/api/elevation/json?locations=',lat,',',lon,'&sensor=false&key=',key))$results[[1]]$elevation
 }
 if (any(!is.numeric(c(lat,lon,elevation)))) stop('Error: lat, lon and elevation have to be numeric')
 lat = lat[1]; lon = lon[1]; elevation=elevation[1]
 msl = ifelse(is.null(elevation),'',paste0(';msl=',round(elevation,digits=0)))
-url = paste0('http://api.met.no/weatherapi/locationforecast/1.9/?lat=',lat,';lon=',lon,msl)
-x =  paste0(paste0(readLines(url), collapse = "\n"), "\n")
+url = paste0('https://api.met.no/weatherapi/locationforecast/2.0/classic?lat=',lat,';lon=',lon,msl)
+x =  paste0(paste0(readLines(url,warn=F), collapse = "\n"), "\n")
 x = xmlRoot(xmlParse(x))
 timefrom = with_tz(strptime(xpathSApply(x,'//time/@from'),'%Y-%m-%dT%H:%M:%S',tz='GMT'),tzone=tz)
 timeto = with_tz(strptime(xpathSApply(x,'//time/@to'),'%Y-%m-%dT%H:%M:%S',tz='GMT'),tzone=tz)

@@ -8,7 +8,8 @@ Also, using the location query option you are agreeing to the Google Maps API Te
 }
 
 \usage{
-locationforecast(lat,lon,elevation=NULL,location=NULL,exact=TRUE,tz=Sys.timezone())
+locationforecast(lat,lon,elevation=NULL,location=NULL,exact=TRUE,
+tz=Sys.timezone(),key=NULL)
 }
 \arguments{
   \item{lat, lon}{numeric objects. latitude and longitude of a location in decimal degrees}
@@ -20,6 +21,8 @@ locationforecast(lat,lon,elevation=NULL,location=NULL,exact=TRUE,tz=Sys.timezone
   \item{exact}{logical, indicating an exact time or an interval period forecasts}
 
   \item{tz}{time zone format. system time zone by default}
+
+  \item{key}{Google API key}
 
 }
 \details{ If exact=FALSE, precipitation and temperature range can be obtained since these are computed as interval quantities.}
